@@ -36,7 +36,7 @@
         $function = $fn
     }
                 
-    $url = "http://$([System.Web.HttpUtility]::UrlEncode($computerName)):15672/api/$function"
+    $url = "https://$([System.Web.HttpUtility]::UrlEncode($computerName))/api/$function/$userName"
     Write-Verbose "Invoking REST API: $url"
     
     return Invoke-RestMethod $url -Credential $cred -DisableKeepAlive
